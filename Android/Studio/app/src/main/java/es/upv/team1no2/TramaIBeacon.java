@@ -1,6 +1,5 @@
-package es.upv.team1no2;
 
-//package org.jordi.btlealumnos;
+package es.upv.team1no2;
 
 import java.util.Arrays;
 
