@@ -2,6 +2,7 @@ package es.upv.team1no2;
 
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
+
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -15,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import es.upv.team1no2.R;
 import java.util.UUID;
 
 // ------------------------------------------------------------------
@@ -155,14 +155,19 @@ public class MainActivity extends AppCompatActivity {
         this.detenerBusquedaDispositivosBTLE();
     } // ()
 
+
     // --------------------------------------------------------------
     // --------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        darPermisosApp();
+    } // onCreate()
 
-        // pedir permisos
+    // pedir permisos
+    public void darPermisosApp(){
+
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED){
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)){
@@ -174,8 +179,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Location permissions already granted", Toast.LENGTH_SHORT).show();
         }
 
+    }
 
-    } // onCreate()
+
 
 } // class
 // --------------------------------------------------------------
