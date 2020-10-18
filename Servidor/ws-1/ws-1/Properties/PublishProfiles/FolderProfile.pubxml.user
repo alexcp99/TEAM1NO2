@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Raul Santos Lopez\Desktop\Nueva carpeta (2)</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/14/2019 17:01:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/14/2019 17:01:24</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/11/2019 00:56:46</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.dll">
+      <publishTime>05/30/2020 20:01:20</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.dll.config">
+      <publishTime>12/03/2020 16:26:12</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.EF6.dll">
+      <publishTime>05/30/2020 16:01:24</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.Linq.dll">
+      <publishTime>05/30/2020 16:01:22</publishTime>
+    </File>
+    <File Include="bin/ws-1.dll">
+      <publishTime>10/18/2020 05:08:09</publishTime>
+    </File>
+    <File Include="bin/ws-1.pdb">
+      <publishTime>10/18/2020 05:08:09</publishTime>
+    </File>
+    <File Include="bin/x64/SQLite.Interop.dll">
+      <publishTime>05/30/2020 20:02:12</publishTime>
+    </File>
+    <File Include="bin/x86/SQLite.Interop.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="dabase.db">
+      <publishTime>10/18/2020 04:58:33</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/18/2020 04:12:50</publishTime>
+    </File>
+    <File Include="ws1.asmx">
+      <publishTime>10/17/2020 22:37:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
