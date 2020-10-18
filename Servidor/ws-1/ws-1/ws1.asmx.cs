@@ -33,14 +33,39 @@ namespace ws_1
         [WebMethod]
         public void UltimaLectura()
         {
-            Medicion obj = new Medicion(1, 1, 23334455, 32, 11, 322);
-            var jsondata = JsonConvert.SerializeObject(obj);
-            //return jsondata.ToString();
-            HttpContext.Current.Response.AppendHeader("Access-Control-Allow-Origin", "*");
-            HttpContext.Current.Response.ContentType = "application/json; charset=utf-8";
-            HttpContext.Current.Response.Write(jsondata.ToString());
-            HttpContext.Current.Response.End();
-            //return new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(obj);
+            string a = System.AppDomain.CurrentDomain.BaseDirectory + "db\\dabase.db";
+            string connectionString = string.Format("Data Source = {0}; Version = 3;", a);
+            bool testigo = false;
+            //Medicion obj = new Medicion();
+            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "select * from mediciones ORDER BY idmedicion DESC LIMIT 1";
+                    using (SQLiteDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            Medicion obj = new Medicion(Convert.ToInt32(dr[0]), Convert.ToInt32(dr[1]), Convert.ToInt32(dr[2]), Convert.ToDouble(dr[3]), Convert.ToDouble(dr[4]), Convert.ToDouble(dr[5]));
+
+                            testigo = true;
+                            if (testigo)
+                            {
+                                var jsondata = JsonConvert.SerializeObject(obj);
+                                HttpContext.Current.Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                                HttpContext.Current.Response.ContentType = "application/json; charset=utf-8";
+                                HttpContext.Current.Response.Write(jsondata.ToString());
+                                HttpContext.Current.Response.End();
+                            }
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            
+
+
         }
 
         [WebMethod]
@@ -57,12 +82,8 @@ namespace ws_1
                 SQLiteCommand insertCommand = new SQLiteCommand();
                 insertCommand.Connection = cnn;
                 // Use parameterized query to prevent SQL injection attacks
-                insertCommand.CommandText = "INSERT INTO mediciones VALUES (NULL, @idsensor, @date, @lat, @long, @valor)";
-                insertCommand.Parameters.AddWithValue("@idsensor", SqlDbType.Int);
-                insertCommand.Parameters.AddWithValue("@date", SqlDbType.Int);
-                insertCommand.Parameters.AddWithValue("@lat", SqlDbType.Real);
-                insertCommand.Parameters.AddWithValue("@long", SqlDbType.Real);
-                insertCommand.Parameters.AddWithValue("@valor", SqlDbType.Real);
+                string query = string.Format("INSERT INTO mediciones VALUES (NULL, {0}, {1}, {2}, {3}, {4})" , idsen,date,lat,longi,valor);
+                insertCommand.CommandText = query;
 
                 insertCommand.ExecuteReader();
 

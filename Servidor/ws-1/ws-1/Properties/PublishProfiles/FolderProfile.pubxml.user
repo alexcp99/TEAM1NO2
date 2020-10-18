@@ -29,10 +29,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/30/2020 16:01:22</publishTime>
     </File>
     <File Include="bin/ws-1.dll">
-      <publishTime>10/18/2020 05:08:09</publishTime>
+      <publishTime>10/18/2020 07:22:34</publishTime>
     </File>
     <File Include="bin/ws-1.pdb">
-      <publishTime>10/18/2020 05:08:09</publishTime>
+      <publishTime>10/18/2020 07:22:34</publishTime>
     </File>
     <File Include="bin/x64/SQLite.Interop.dll">
       <publishTime>05/30/2020 20:02:12</publishTime>
@@ -42,6 +42,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="dabase.db">
       <publishTime>10/18/2020 04:58:33</publishTime>
+    </File>
+    <File Include="db/dabase.db">
+      <publishTime>10/18/2020 07:21:20</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>10/18/2020 04:12:50</publishTime>

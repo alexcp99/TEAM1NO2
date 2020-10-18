@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dabase.db" />
+    <Content Include="db\dabase.db" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

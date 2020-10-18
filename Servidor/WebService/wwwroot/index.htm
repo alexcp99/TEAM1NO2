@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="id01"></div>
+
+<script>
+    
+url = "http://127.0.0.1/ws1.asmx/UltimaLectura";    
+    
+    
+/*var req = new XMLHttpRequest();
+req.open('GET', url, false); 
+req.send(null);
+if (req.status == 200)
+  console.log(req.responseText);*/
+    
+fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data))  
+  .catch(error => console.log( error))
+
+</script>
+
+ 
+    
+
+
+</body>
+</html>
+<!--   
+//https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch
+//https://www.todojs.com/api-fetch-el-nuevo-estandar-que-permite-hacer-llamadas-http/
+1    -->
